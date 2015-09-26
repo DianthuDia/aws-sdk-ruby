@@ -128,7 +128,13 @@ module Seahorse
         def build_net_request(request)
           request_class = net_http_request_class(request)
           req = request_class.new(request.endpoint.request_uri, headers(request))
-          req.body_stream = request.body
+
+          if request.endpoint.request_uri == '/2013-01-01/search'
+            req.form_data = JSON.parse(request.body.read).merge(format: :sdk, pretty: true)
+          else
+            req.body_stream = request.body
+          end
+
           req
         end
 

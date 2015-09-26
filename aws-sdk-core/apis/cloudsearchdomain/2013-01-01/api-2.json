@@ -13,8 +13,8 @@
     "Search":{
       "name":"Search",
       "http":{
-        "method":"GET",
-        "requestUri":"/2013-01-01/search?format=sdk&pretty=true"
+        "method":"POST",
+        "requestUri":"/2013-01-01/search"
       },
       "input":{"shape":"SearchRequest"},
       "output":{"shape":"SearchResponse"},
@@ -183,67 +183,54 @@
       "members":{
         "cursor":{
           "shape":"Cursor",
-          "location":"querystring",
           "locationName":"cursor"
         },
         "expr":{
           "shape":"Expr",
-          "location":"querystring",
           "locationName":"expr"
         },
         "facet":{
           "shape":"Facet",
-          "location":"querystring",
           "locationName":"facet"
         },
         "filterQuery":{
           "shape":"FilterQuery",
-          "location":"querystring",
           "locationName":"fq"
         },
         "highlight":{
           "shape":"Highlight",
-          "location":"querystring",
           "locationName":"highlight"
         },
         "partial":{
           "shape":"Partial",
-          "location":"querystring",
           "locationName":"partial"
         },
         "query":{
           "shape":"Query",
-          "location":"querystring",
           "locationName":"q"
         },
         "queryOptions":{
           "shape":"QueryOptions",
-          "location":"querystring",
           "locationName":"q.options"
         },
         "queryParser":{
           "shape":"QueryParser",
-          "location":"querystring",
           "locationName":"q.parser"
         },
         "return":{
           "shape":"Return",
-          "location":"querystring",
           "locationName":"return"
         },
         "size":{
           "shape":"Size",
-          "location":"querystring",
           "locationName":"size"
         },
         "sort":{
           "shape":"Sort",
-          "location":"querystring",
           "locationName":"sort"
         },
         "start":{
           "shape":"Start",
-          "location":"querystring",
           "locationName":"start"
         }
       }
